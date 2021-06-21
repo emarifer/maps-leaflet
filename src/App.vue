@@ -36,6 +36,10 @@
 
 <!-- 
   DOCUMENTATION:
+
+  LEAFLET-PROVIDERS PREVIEW. VER;
+  https://leaflet-extras.github.io/leaflet-providers/preview/
+  
   <li><a href="https://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a></li>
 
   <li><a href="https://vue2-leaflet.netlify.app/" target="_blank" rel="noopener">Vue Leaflet</a></li>
