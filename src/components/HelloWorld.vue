@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this library,<br>
-      check out the Leaflet documentation.
+      check out the 
       <a href="https://leafletjs.com/" target="_blank" rel="noopener">Leaflet documentation</a>.
     </p>
     <h3>Installed Plugins:</h3>
