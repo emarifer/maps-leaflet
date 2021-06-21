@@ -8,8 +8,8 @@
 <style scoped>
     .container {
         height: 350px;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         padding-bottom: 4rem;
     }
 

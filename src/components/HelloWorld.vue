@@ -22,7 +22,7 @@
         <li><a href="https://leaflet-extras.github.io/leaflet-providers/preview/" target="_blank" rel="noopener">Leaflet-providers preview</a></li>
         <li><a href="https://github.com/sigdeletras/Leaflet.Spain.WMS" target="_blank" rel="noopener">Leaflet.Spain.WMS</a></li>
         <li><a href="https://stackoverflow.com/questions/61389223/leaflet-change-marker-for-wpt" target="_blank" rel="noopener">Leaflet change marker for wpt</a></li>
-        <li><a href="https://jsfiddle.net/31ws6z37/" target="_blank" rel="noopener">leaflet map: update marker using navigator.geolocation.watchPosition?</a></li>
+        <li><a href="https://jsfiddle.net/31ws6z37/5/" target="_blank" rel="noopener">leaflet map: update marker using map.locate</a></li>
       </ul>
     </div>
     <div class="footer">

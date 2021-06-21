@@ -22,7 +22,9 @@
     export default {
         name: 'MyLocation',
         mounted() {
-            delete Icon.Default.prototype._getIconUrl;
+            this.resetIcons(),
+            this.initializeMapAndLocator();
+            /* delete Icon.Default.prototype._getIconUrl;
             Icon.Default.mergeOptions({
                 iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
                 iconUrl: require('leaflet/dist/images/marker-icon.png'),
@@ -63,10 +65,10 @@
 
                     L.control.scale({ options: { position: 'bottomleft', metric: true } }).addTo(map);
 
-                    /*L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-                    maxZoom: 18
-                    }).addTo(map);*/
+                    // L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+                    // attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+                    // maxZoom: 18
+                    // }).addTo(map);
 
                     map.locate({ setView: true, maxZoom: 16 });
                     function onLocationFound(e) {
@@ -84,7 +86,59 @@
                 }
             }
 
-            getLocationUpdate();
-        }
+            getLocationUpdate(); */
+        },
+        methods: {
+            resetIcons() {
+                delete Icon.Default.prototype._getIconUrl;
+                Icon.Default.mergeOptions({
+                    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+                    iconUrl: require('leaflet/dist/images/marker-icon.png'),
+                    shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+                })
+            },
+            initializeMapAndLocator() {
+
+                const map = L.map('map_2385853');
+
+                const googleMaps = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+                    maxZoom: 20,
+                    subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+                }).addTo(map);
+
+                L.control.scale({ options: { position: 'bottomleft', metric: true } })
+                    .addTo(map);
+
+                map.locate({
+                    setView: true,
+                    maxZoom: 16,
+                    watch: true,
+                    timeout: 5000
+                });
+
+                let marker;
+                let circles;
+
+                function onLocationFound(e) {
+                    var radius = e.accuracy / 2;
+
+                    if (map.hasLayer(circles) && map.hasLayer(marker)) {
+                        map.removeLayer(circles);
+                        map.removeLayer(marker);
+                    }
+
+                    marker = new L.Marker(e.latlng, { draggable: true });
+                    circles = new L.circle(e.latlng, radius);
+                    circles
+                        .bindPopup(`You are less than ${radius} meters from this point`)
+                        .openPopup();
+
+                    map.addLayer(marker);
+                    map.addLayer(circles);
+                }
+
+                map.on('locationfound', onLocationFound);
+            },
+        },
     }
 </script>

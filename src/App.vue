@@ -11,26 +11,27 @@
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  #nav {
+    padding: 30px;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
 </style>
 
 
@@ -58,7 +59,13 @@
 
   <li><a href="https://stackoverflow.com/questions/61389223/leaflet-change-marker-for-wpt" target="_blank" rel="noopener">Leaflet change marker for wpt</a></li>
 
-  LEAFLET MAP: UPDATE MARKER USING NAVIGATOR.GEOLOCATION.WATCHPOSITION?. VER;
+  LEAFLET MAP: UPDATE MARKER USING MAP.LOCATE.
+  LEAFLET MAP: HOW TO REMOVELAYER AND ADD POPUPS TO THE MAP?. VER:
+  https://stackoverflow.com/questions/40438868/leaflet-map-how-to-removelayer-and-add-popups-to-the-map
+  https://jsfiddle.net/31ws6z37/5/
+
+  MENOS RELEVANTE:
+  LEAFLET MAP: UPDATE MARKER USING MAP.LOCATE. VER;
   https://stackoverflow.com/questions/40433317/leaflet-map-update-marker-using-navigator-geolocation-watchposition
 
   <li><a href="https://jsfiddle.net/31ws6z37/" target="_blank" rel="noopener">leaflet map: update marker using navigator.geolocation.watchPosition?</a></li>
